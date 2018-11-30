@@ -1,4 +1,4 @@
-# Celery Memes <img src="./src/assets/hat-wobble.png" width="50%" height="50%">
+# Celery Memes <img src="./src/assets/hat-wobble.png" width="50px height="50px">
 
 The best place to upload Celery Man, Tayne, Oyster, and Mozzarell media on the web!
 
