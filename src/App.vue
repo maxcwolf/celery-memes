@@ -1,12 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <img src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to My Shitty Vue-Amplify Test App" />
+    <div v-if="!signedIn"><amplify-authenticator></amplify-authenticator></div>
+    <div v-if="signedIn"><amplify-sign-out></amplify-sign-out></div>
   </div>
 </template>
+
+<script>
+import HelloWorld from "./components/HelloWorld.vue";
+import { AmplifyEventBus } from "aws-amplify-vue";
+import { Auth } from "aws-amplify";
+export default {
+  name: "app",
+  components: {
+    HelloWorld
+  },
+  async beforeCreate() {
+    try {
+      const user = await Auth.currentAuthenticatedUser();
+      this.signedIn = true;
+    } catch {
+      this.signedIn = false;
+    }
+    AmplifyEventBus.$on("authState", info => {
+      if (info === "signedIn") {
+        this.signedIn = true;
+      } else {
+        this.signedIn = false;
+      }
+    });
+  },
+  data() {
+    return {
+      signedIn: false,
+      fuckLinter: user
+    };
+  }
+};
+</script>
 
 <style>
 #app {
@@ -15,17 +47,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  margin-top: 60px;
 }
 </style>

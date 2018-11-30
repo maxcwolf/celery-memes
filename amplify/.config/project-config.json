@@ -1,0 +1,20 @@
+{
+    "projectName": "awsamplifyvuetest",
+    "projectPath": "/Users/mwolf/workspace/test-apps/aws-amplify-vue-test",
+    "defaultEditor": "code",
+    "frontendHandler": {
+        "javascript": "/Users/mwolf/.nvm/versions/node/v10.14.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "vue",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist",
+            "BuildCommand": "npm run build",
+            "StartCommand": "npm run serve"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/Users/mwolf/.nvm/versions/node/v10.14.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}
