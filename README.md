@@ -1,4 +1,4 @@
-# Celery Memes
+# Celery Memes ![](./src/assets/hat-wobble.png)
 
 The best place to upload Celery Man, Tayne, Oyster, and Mozzarell media on the web!
 
