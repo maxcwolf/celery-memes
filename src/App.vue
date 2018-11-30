@@ -9,7 +9,7 @@
     <div v-if="signedIn">
       <amplify-sign-out class="signout"></amplify-sign-out>
       <div class="container">
-        <el-button type="primary" @click="showAlbum()">Add New Celery Meme</el-button>
+        <el-button type="primary" @click="showAlbum">Add New Celery Meme</el-button>
         <amplify-s3-album path="images/"></amplify-s3-album>
         <amplify-photo-picker v-if="albumShown" v-bind:photoPickerConfig="photoPickerConfig"></amplify-photo-picker>
       </div>
@@ -50,12 +50,16 @@ export default {
     return {
       photoPickerConfig,
       signedIn: false,
-      albumShown: true
+      albumShown: false
     };
   },
   methods: {
     showAlbum() {
-      albumShown ? (albumShown = false) : (albumShown = true);
+      if (this.albumShown) {
+        this.albumShown = false;
+      } else {
+        this.albumShown = true;
+      }
     }
   }
 };

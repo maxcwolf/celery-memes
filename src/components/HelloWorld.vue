@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>
+      <img src="@/assets/hat-wobble.png" width="35px" height="35px">
+      {{ msg }}
+      <img src="@/assets/hat-wobble.png" width="35px" height="35px">
+    </h1>
   </div>
 </template>
 
