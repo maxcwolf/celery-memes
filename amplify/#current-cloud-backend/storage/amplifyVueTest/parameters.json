@@ -1,0 +1,9 @@
+{
+    "bucketName": "awsamplifyvuetest1367426f2469468495ef1641a499fae4",
+    "authPolicyName": "s3_amplify_491a482c",
+    "unauthPolicyName": "s3_amplify_491a482c",
+    "authRoleName": "awsamplifyvuetest-20181129195334-authRole",
+    "unauthRoleName": "awsamplifyvuetest-20181129195334-unauthRole",
+    "authPermissions": "rw",
+    "unauthPermissions": ""
+}
