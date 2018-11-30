@@ -1,6 +1,6 @@
 # Celery Memes
 
-## The best place to upload Celery Man, Tayne, Oyster, and Mozzarell media on the web!
+The best place to upload Celery Man, Tayne, Oyster, and Mozzarell media on the web!
 
 > _It's actually just a fun exploration of AWS-Amplify, Vue, and Element UI_
 
