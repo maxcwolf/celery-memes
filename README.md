@@ -1,6 +1,6 @@
 # <img src="./src/assets/hat-wobble.png" width="35px" height="35px"> Celery Memes <img src="./src/assets/hat-wobble.png" width="35px" height="35px">
 
-The best place to upload Celery Man, Tayne, Oyster, and Mozzarell media on the web!
+The best place to upload Celery Man, Tayne, Oyster, and Mozzarel media on the web!
 
 > _It's actually just a fun exploration of AWS-Amplify, Vue, and Element UI_
 
