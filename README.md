@@ -4,6 +4,9 @@ The best place to upload Celery Man, Tayne, Oyster, and Mozzarell media on the w
 
 > It's actually just a fun exploration of AWS-Amplify, Vue, and Element UI
 
+**Let's Kick up the 4d3d3d3!**
+![](./src/assets/celeryman.gif)
+
 ## Project setup
 
 ```
