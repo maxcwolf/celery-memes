@@ -142,6 +142,19 @@
 					"unauthPermissions": ""
 				}
 			}
+		},
+		"apicelery": {
+			"Type": "AWS::CloudFormation::Stack",
+			"Properties": {
+				"TemplateURL": "https://s3.amazonaws.com/awsamplifyvuetest-20181129195334-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"Parameters": {
+					"AppSyncApiName": "celery",
+					"schemaGraphql": "s3://awsamplifyvuetest-20181129195334-deployment/amplify-appsync-files/schema.graphql.1543555763125",
+					"ResolverBucket": "awsamplifyvuetest-20181129195334-deployment",
+					"ResolverRootKey": "amplify-appsync-files",
+					"DeploymentTimestamp": "1543555763125"
+				}
+			}
 		}
 	},
 	"Outputs": {

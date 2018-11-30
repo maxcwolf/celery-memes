@@ -19,7 +19,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/awsamplifyvuetest-20181129195334-deployment/amplify-cfn-templates/auth/cognitoe021a879-cloudformation-template.yml",
 				"logicalId": "authcognitoe021a879"
 			},
-			"lastPushTimeStamp": "2018-11-30T02:44:07.194Z",
+			"lastPushTimeStamp": "2018-11-30T05:31:44.433Z",
 			"output": {
 				"AppClientSecret": "1g4hf7o4fa1s93gdlep6p7a8jqdckqv2ms1vupuk205fs4imghss",
 				"UserPoolId": "us-east-2_rBklrZgYa",
@@ -40,12 +40,30 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/awsamplifyvuetest-20181129195334-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
 				"logicalId": "storageamplifyVueTest"
 			},
-			"lastPushTimeStamp": "2018-11-30T02:44:07.207Z",
+			"lastPushTimeStamp": "2018-11-30T05:31:44.445Z",
 			"output": {
 				"BucketName": "awsamplifyvuetest1367426f2469468495ef1641a499fae4",
 				"Region": "us-east-2"
 			},
 			"lastPushDirHash": "sK65024VSnzzSEzyv1aFQemIDzs="
+		}
+	},
+	"api": {
+		"celery": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "API_KEY",
+				"GraphQLAPIIdOutput": "kpymwysf5fgrtcvdoi4zjxx2mm",
+				"GraphQLAPIEndpointOutput": "https://xd6tkky5mzgwxf2e3gljzmv23q.appsync-api.us-east-2.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-koykyye2obg6hnyu2jgjsdnybm"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/awsamplifyvuetest-20181129195334-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apicelery"
+			},
+			"lastPushTimeStamp": "2018-11-30T05:31:44.448Z",
+			"lastPushDirHash": "WvrpP96l75X4gHRc4Bka/DMA8lY="
 		}
 	}
 }

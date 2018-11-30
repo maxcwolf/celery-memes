@@ -1,0 +1,120 @@
+type Celery {
+  id: ID!
+  name: String!
+  description: String
+  location: String
+  rating: Int
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelCeleryConnection {
+  items: [Celery]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelCeleryFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  description: ModelStringFilterInput
+  location: ModelStringFilterInput
+  rating: ModelIntFilterInput
+  and: [ModelCeleryFilterInput]
+  or: [ModelCeleryFilterInput]
+  not: ModelCeleryFilterInput
+}
+
+type Query {
+  getCelery(id: ID!): Celery
+  listCelerys(filter: ModelCeleryFilterInput, limit: Int, nextToken: String): ModelCeleryConnection
+}
+
+input CreateCeleryInput {
+  id: ID
+  name: String!
+  description: String
+  location: String
+  rating: Int
+}
+
+input UpdateCeleryInput {
+  id: ID!
+  name: String
+  description: String
+  location: String
+  rating: Int
+}
+
+input DeleteCeleryInput {
+  id: ID
+}
+
+type Mutation {
+  createCelery(input: CreateCeleryInput!): Celery
+  updateCelery(input: UpdateCeleryInput!): Celery
+  deleteCelery(input: DeleteCeleryInput!): Celery
+}
+
+type Subscription {
+  onCreateCelery: Celery @aws_subscribe(mutations: ["createCelery"])
+  onUpdateCelery: Celery @aws_subscribe(mutations: ["updateCelery"])
+  onDeleteCelery: Celery @aws_subscribe(mutations: ["deleteCelery"])
+}
