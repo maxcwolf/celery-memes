@@ -26,8 +26,13 @@ The best place to upload Celery Man, Tayne, Oyster, and Mozzarel media on the we
 
 - Ability to report non-Celery Man related content.
 - Ability to upvote/downvote content using custom symbols (Hat Wobble :thumbsup: OR Inverse Hat Wobble :thumbsdown: )
+- Ability to generate a print out of Oyster Smiling
+
+  <img src="./src/assets/oysterSmiling-thumb.jpg" width="10%" height="10%" />
 
 ## Project setup
+
+> If you set up the project locally you will need to create an `.amplifyrc` file and link to your AWS account. I will host the site when I am closer to finished!
 
 ```
 yarn install
