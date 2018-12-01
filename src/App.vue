@@ -9,7 +9,7 @@
       <nav-bar></nav-bar>
       <HeaderTitle msg="CELERY MEMES"/>
       <div class="container">
-        <button-bar @showModal="showModal()"/>
+        <button-bar @showModal="showModal" @showCelery="showModal(true)"/>
         <amplify-s3-album path="images/"></amplify-s3-album>
         <upload-image
           @closeModal="closeModal"
@@ -17,6 +17,12 @@
           :config="photoPickerConfig"
           :dialogVisible="dialogVisible"
         ></upload-image>
+        <write-celery
+          @closeCelery="closeModal(true)"
+          v-show="celeryVisible"
+          :signedIn="signedIn"
+          :celeryVisible="celeryVisible"
+        ></write-celery>
       </div>
     </div>
   </div>
@@ -27,6 +33,7 @@ import HeaderTitle from "./components/HeaderTitle";
 import UploadImage from "./components/UploadImage";
 import NavBar from "./components/NavBar";
 import ButtonBar from "./components/ButtonBar";
+import WriteCelery from "./components/WriteCelery";
 import { AmplifyEventBus } from "aws-amplify-vue";
 import { Auth } from "aws-amplify";
 
@@ -41,7 +48,8 @@ export default {
     HeaderTitle,
     UploadImage,
     NavBar,
-    ButtonBar
+    ButtonBar,
+    WriteCelery
   },
   async beforeCreate() {
     try {
@@ -61,17 +69,18 @@ export default {
   data() {
     return {
       dialogVisible: false,
+      celeryVisible: false,
       photoPickerConfig,
       signedIn: false,
       albumShown: false
     };
   },
   methods: {
-    showModal() {
-      this.dialogVisible = true;
+    showModal(celery) {
+      celery ? (this.celeryVisible = true) : (this.dialogVisible = true);
     },
-    closeModal() {
-      this.dialogVisible = false;
+    closeModal(celery) {
+      celery ? (this.celeryVisible = false) : (this.dialogVisible = false);
     },
     showAlbum() {
       console.log(this.dialogVisible);
