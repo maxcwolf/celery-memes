@@ -44,6 +44,9 @@ const CreateCelery = `
     }
   }
 `;
+
+import { Auth, API, graphqlOperation } from "aws-amplify";
+
 export default {
   name: "WriteCelery",
   props: {
@@ -64,12 +67,7 @@ export default {
       }
     } = await API.graphql(graphqlOperation(GetCelery));
     this.celeryFics = items;
-    try {
-      const user = await Auth.currentAuthenticatedUser();
-      this.signedIn = true;
-    } catch (err) {
-      this.signedIn = false;
-    }
+
     AmplifyEventBus.$on("authState", info => {
       if (info === "signedIn") {
         this.signedIn = true;
