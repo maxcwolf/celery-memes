@@ -1,35 +1,45 @@
 <template>
   <div id="app">
-    <div class="banner"></div>
     <!-- <img src="./assets/celeryman-warning-nsfw.png"> -->
-    <HelloWorld msg="CELERY MEMES"/>
     <div v-if="!signedIn">
+      <HeaderTitle msg="CELERY MEMES"/>
       <amplify-authenticator></amplify-authenticator>
     </div>
     <div v-if="signedIn">
-      <amplify-sign-out class="signout"></amplify-sign-out>
+      <nav-bar></nav-bar>
+      <HeaderTitle msg="CELERY MEMES"/>
       <div class="container">
-        <el-button type="primary" @click="showAlbum">Add New Celery Meme</el-button>
+        <el-button type="primary" @click="showModal()">Add New Celery Meme</el-button>
         <amplify-s3-album path="images/"></amplify-s3-album>
-        <amplify-photo-picker v-if="albumShown" v-bind:photoPickerConfig="photoPickerConfig"></amplify-photo-picker>
+        <upload-image
+          @closeModal="closeModal"
+          v-show="dialogVisible"
+          :config="photoPickerConfig"
+          :dialogVisible="dialogVisible"
+        ></upload-image>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import HeaderTitle from "./components/HeaderTitle";
+import UploadImage from "./components/UploadImage";
+import NavBar from "./components/NavBar";
 import { AmplifyEventBus } from "aws-amplify-vue";
 import { Auth } from "aws-amplify";
 
 const photoPickerConfig = {
+  header: "",
   path: "images/"
 };
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    HeaderTitle,
+    UploadImage,
+    NavBar
   },
   async beforeCreate() {
     try {
@@ -48,13 +58,22 @@ export default {
   },
   data() {
     return {
+      dialogVisible: false,
       photoPickerConfig,
       signedIn: false,
       albumShown: false
     };
   },
   methods: {
+    showModal() {
+      this.dialogVisible = true;
+    },
+    closeModal() {
+      this.dialogVisible = false;
+    },
     showAlbum() {
+      console.log(this.dialogVisible);
+      this.showModal();
       if (this.albumShown) {
         this.albumShown = false;
       } else {
