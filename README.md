@@ -21,7 +21,7 @@ The best place to upload Celery Man, Tayne, Oyster, and Mozzarel media on the we
   > WARNING: This Feature will Not Be Suitable For Work
 
 - Ability to report non-Celery Man related content.
-- Ability to upvote/downvote content using custom symbols (Hat Wobble :thumbs_up: OR Inverse Hat Wobble :thumbs_down:)
+- Ability to upvote/downvote content using custom symbols (Hat Wobble :thumbsup: OR Inverse Hat Wobble :thumbsdown: )
 
 ## Project setup
 
