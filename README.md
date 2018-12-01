@@ -14,6 +14,10 @@ The best place to upload Celery Man, Tayne, Oyster, and Mozzarel media on the we
 2. Post Celery Man gifs via the image uploader. Images stored securely on AWS server.
 3. **NEW** Write and post your very own Celery Man Fan Fiction! :tada: :books:
 
+**Feature 2: Uploading Oyster**
+
+![](./src/assets/celery-memes-upload.gif)
+
 ### Coming Soon!
 
 - Ability to generate a NUDE TAYNE :dizzy_face:
