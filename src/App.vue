@@ -9,7 +9,7 @@
       <nav-bar></nav-bar>
       <HeaderTitle msg="CELERY MEMES"/>
       <div class="container">
-        <el-button type="primary" @click="showModal()">Add New Celery Meme</el-button>
+        <button-bar @showModal="showModal()"/>
         <amplify-s3-album path="images/"></amplify-s3-album>
         <upload-image
           @closeModal="closeModal"
@@ -26,6 +26,7 @@
 import HeaderTitle from "./components/HeaderTitle";
 import UploadImage from "./components/UploadImage";
 import NavBar from "./components/NavBar";
+import ButtonBar from "./components/ButtonBar";
 import { AmplifyEventBus } from "aws-amplify-vue";
 import { Auth } from "aws-amplify";
 
@@ -39,7 +40,8 @@ export default {
   components: {
     HeaderTitle,
     UploadImage,
-    NavBar
+    NavBar,
+    ButtonBar
   },
   async beforeCreate() {
     try {
