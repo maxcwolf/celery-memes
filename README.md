@@ -8,6 +8,21 @@ The best place to upload Celery Man, Tayne, Oyster, and Mozzarel media on the we
 
 **Let's Kick up the 4d3d3d3!**
 
+### Features
+
+1. Log in securely via AWS
+2. Post Celery Man gifs via the image uploader. Images stored securely on AWS server.
+3. **NEW** Write and post your very own Celery Man Fan Fiction! :tada: :books:
+
+### Coming Soon!
+
+- Ability to generate a NUDE TAYNE :dizzy_face:
+
+  > WARNING: This Feature will Not Be Suitable For Work
+
+- Ability to report non-Celery Man related content.
+- Ability to upvote/downvote content using custom symbols (Hat Wobble :thumbs_up: OR Inverse Hat Wobble :thumbs_down:)
+
 ## Project setup
 
 ```

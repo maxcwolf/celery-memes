@@ -1,7 +1,10 @@
 <template>
   <el-row>
     <el-col :span="8">
-      <el-button type="warning" @click="addCelery">Write Fan Fiction</el-button>
+      <el-button type="warning" @click="addCelery">
+        Write Fan Fiction
+        <i class="el-icon-edit"></i>
+      </el-button>
     </el-col>
     <el-col :span="8">
       <el-button type="primary" @click="addMeme">
